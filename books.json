@@ -1,0 +1,40 @@
+{
+  "library": [
+    {
+      "id": "1",
+      "BookName": "War and Peace",
+      "AuthorName": "Leo Tolstoy",
+      "BookType": "Historical",
+      "Publisher": "Voyna i mir",
+      "Cost": "$12",
+      "CoverImage": "asset/images/book1.jpg"
+    },
+    {
+      "id": "2",
+      "BookName": "A Tale of Two Cities",
+      "AuthorName": "Charles Darwin",
+      "BookType": "historical",
+      "Publisher": "Dickens ",
+      "Cost": "$10",
+      "CoverImage": "asset/images/book2.jpg"
+    },
+    {
+      "id": "3",
+      "BookName": "the famous five",
+      "AuthorName": "Enid Blyton",
+      "BookType": "fantasy",
+      "Cost": "$6",
+      "Publisher": "Hodder & Stoughton",
+      "CoverImage": "asset/images/book3.jpg"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "aFqR9Zc"
+    }
+  ]
+}

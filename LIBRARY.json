@@ -1,0 +1,157 @@
+{
+  "library": [
+    {
+      "id": "1",
+      "BookName": "War and Peace",
+      "AuthorName": "Leo Tolstoy",
+      "BookType": "Historical",
+      "Publisher": "Voyna i mir",
+      "Cost": "$12",
+      "CoverImage": "asset/images/book1.jpg"
+    },
+    {
+      "id": "2",
+      "BookName": "A Tale of Two Cities",
+      "AuthorName": "Charles Darwin",
+      "BookType": "historical",
+      "Publisher": "Dickens ",
+      "Cost": "$10",
+      "CoverImage": "asset/images/book2.jpg"
+    },
+    {
+      "id": "3",
+      "BookName": "the famous five",
+      "AuthorName": "Enid Blyton",
+      "BookType": "fantasy",
+      "Cost": "$6",
+      "Publisher": "Hodder & Stoughton",
+      "CoverImage": "asset/images/book3.jpg"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": "asset/images/book1.jpg",
+      "id": "kcj5jow"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": "asset/images/book1.jpg",
+      "id": "EgVWr_3"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "954bm76"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "F3F6DfI"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "jn-DTpq"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "fAveoR1"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "-g9fvec"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "whAd3Ga"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "UFcYXFd"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "WiJU_ZE"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "6v5wQFo"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "RxxK5bA"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "dxQwn0z"
+    },
+    {
+      "BookName": {},
+      "AuthorName": {},
+      "BookType": {},
+      "Publisher": {},
+      "Cost": {},
+      "CoverImage": {},
+      "id": "AjEwMIO"
+    }
+  ]
+}
