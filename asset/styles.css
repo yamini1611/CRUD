@@ -1,0 +1,30 @@
+table {
+    font-family: cursive;
+    font-size: large;
+    font-weight: 500;
+    font-style: normal;
+}
+
+tr {
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgb(245, 224, 244);
+}
+
+tr:nth-child(even) {
+background-color:#efdbea;
+}
+
+tr:nth-child(odd) {
+   background-color:azure ;
+
+}
+table{
+    border:solid;
+    border-color: rgb(48, 4, 89);
+}
+#b1{
+    font-family: cursive;
+}

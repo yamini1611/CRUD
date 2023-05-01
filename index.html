@@ -18,34 +18,30 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <link rel="stylesheet" href="asset/styles.css">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-dark bg-mynav">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My App</a>
-    </div>
-  </nav>
 
   <div class="container">
     <div class="d-flex bd-highlight mb-3">
       <div class="me-auto p-2 bd-highlight">
-        <h2>Library</h2>
+        <h2 id="b1">Library</h2>
       </div>
       <div class="p-2 bd-highlight">
-        <button type="button" class="btn btn-secondary" onclick="Create()">Create</button>
+        <button type="button" class="btn btn-secondary" id="b1"onclick="Create()">ADD Book</button>
       </div>
     </div>
 
     <div class="table-responsive">
       <table class="table">
         <thead class="table-dark">
-          <tr>
+          <tr >
             <th class="text-center">#</th>
-            <th class="text-center">Book Name</th>
+            <th class="text-center" style="text-align:center;">Book Name</th>
             <th class="text-center">Author</th>
-            <th class="text-center">Book TypePublisher</th>
+            <th class="text-center">Book Type</th>
             <th class="text-center">Publisher</th>
             <th class="text-center">Cost</th>
             <th class="text-center">Cover Image</th>

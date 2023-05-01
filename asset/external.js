@@ -17,7 +17,7 @@ function loadTable() {
         trHTML += "<td>" + object["BookType"] + "</td>";
         trHTML += "<td>" + object["Publisher"] + "</td>";
         trHTML += "<td>" + object["Cost"] + "</td>";
-        trHTML += '<td ><img width="50px"  src="' +
+        trHTML += '<td><img width="50px" src="' +
           object["CoverImage"] +
           '" class="CoverImage"></td>';
         trHTML +=
@@ -42,7 +42,6 @@ function Create() {
   Swal.fire({
     title: "BOOK DETAILS",
     html:
-      
       '<label >ENTER BOOK NAME</label>' +
       '<input id="BookName" class="swal2-input" placeholder="Book Name" required >' +
       '<label >ENTER AUTHOR NAME</label>' +
@@ -57,9 +56,15 @@ function Create() {
       '<input id="CoverImage" type="file" class="swal2-input" placeholder=" upload Cover Image">',
     focusConfirm: false,
     preConfirm: () => {
-      post();
-    }
-  })
+      post().then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Book added successfully"
+        });
+        loadTable();
+      });
+    },
+  });
 }
 
 function post() {
@@ -75,7 +80,7 @@ function post() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const objects = JSON.parse(this.responseText);
-      Swal.fire("Book added successfully");
+      Swal.fire(objects["message"]);
       loadTable();
     }
   };
@@ -120,10 +125,8 @@ function post() {
         CoverImage: null,
       })
     );
-  }
-}
-
-
+  }}
+ 
 function Edit(id) {
   console.log(id);
   const xhttp = new XMLHttpRequest();
