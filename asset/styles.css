@@ -1,40 +1,46 @@
+/* table tag styling */
 table {
     font-family: cursive;
     font-size: large;
     font-weight: 500;
     font-style: normal;
 }
-
+/* tr tag styling */
 tr {
     text-align: center;
 }
-
+/* hover */
 tr:hover{
     background-color: rgba(122, 6, 109, 0.912);
 }
 
-
+/* border styling */
 table{
     border:solid;
     border-color: rgb(48, 4, 89);
 }
+/* button 1 */
 #b1{
     font-family: cursive;
 }
+/* background-image */
 body{
     background-image: url('/asset/images/b.png');
     position: relative;
 
 }
+/* table body */
 tbody{
     color: rgb(237, 220, 220);
 }
+/* button 2 */
 #b2{
     color: rgb(234, 236, 224);
     font-family: cursive;
     margin-left: 500px;
    
 }
+/* navbar */
 #nav1{
     margin-left: 1200px;
     position: absolute;
