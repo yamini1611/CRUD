@@ -9,31 +9,42 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-  <title>CRUD FROM API</title>
-  <script src="asset/external.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
+  <title>CRUD FROM API</title>
+
+  <!-- external js file -->
+  <script src="asset/external.js"></script>
+
+  <!-- sweetalert CDN -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <link rel="stylesheet" href="asset/styles.css">
 </head>
+<!-- favicon -->
+<link rel="icon" type="image/png" href="/asset/images/fav.jpg">
 
 <body>
+<!-- content starts here -->
+<!-- container 1 -->
 
-
+<nav class="navbar navbar-light">
+  <!-- Navbar content -->
+  <button type="button" id="nav1"class="btn btn-secondary" onclick="showLoginBox()">Login</button>
+</nav>
   <div class="container">
+   
     <div class="d-flex bd-highlight mb-3">
       <div class="me-auto p-2 bd-highlight">
-        <h2 id="b1">Library</h2>
+        <h2 id="b2">Library Books Details  </h2>
       </div>
       <div class="p-2 bd-highlight">
         <button type="button" class="btn btn-secondary" id="b1"onclick="Create()">ADD Book</button>
       </div>
     </div>
-
+<!-- table definition -->
     <div class="table-responsive">
       <table class="table">
         <thead class="table-dark">
@@ -43,7 +54,7 @@
             <th class="text-center">Author</th>
             <th class="text-center">Book Type</th>
             <th class="text-center">Publisher</th>
-            <th class="text-center">Cost</th>
+            <th class="text-center">Cost(in  &#x20B9; )</th>
             <th class="text-center">Cover Image</th>
             <th class="text-center">Action</th>
           </tr>
@@ -60,7 +71,7 @@
       </table>
     </div>
   </div>
-
+<!-- content ends here -->
 
 </body>
 

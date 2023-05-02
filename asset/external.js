@@ -1,4 +1,3 @@
-
 // for loading the page
 function loadTable() {
   const xhttp = new XMLHttpRequest();
@@ -42,8 +41,9 @@ function Create() {
   Swal.fire({
     title: "BOOK DETAILS",
     html:
+      '<form id="create-form">' +
       '<label >ENTER BOOK NAME</label>' +
-      '<input id="BookName" class="swal2-input" placeholder="Book Name" required >' +
+      '<input id="BookName" class="swal2-input" placeholder="Book Name" required>' +
       '<label >ENTER AUTHOR NAME</label>' +
       '<input id="AuthorName" class="swal2-input" placeholder="Author Name" required>' +
       '<label >ENTER BOOK TYPE</label>' +
@@ -51,22 +51,37 @@ function Create() {
       '<label >ENTER PUBLISHER NAME</label>' +
       '<input id="Publisher" class="swal2-input" placeholder="Publisher" required><BR>' +
       '<label >ENTER COST</label><BR>' +
-      '<input id="Cost" class="swal2-input" placeholder="Cost" required>' +
+      '<input id="Cost" class="swal2-input" type="number"placeholder="Cost" required>' +
       '<label >UPLOAD COVER IMAGE</label>' +
-      '<input id="CoverImage" type="file" class="swal2-input" placeholder=" upload Cover Image">',
+      '<input id="CoverImage" type="file" class="swal2-input" placeholder="upload Cover Image" required>' +
+      '</form>',
     focusConfirm: false,
-    preConfirm: () => {
-      post().then(() => {
+    preConfirm: async () => {
+      const form = document.getElementById('create-form');
+      if (!form.checkValidity()) {
+        Swal.showValidationMessage('Please fill out all required fields.');
+        return;
+      }
+      try {
+        post();
         Swal.fire({
           icon: "success",
-          title: "Book added successfully"
+          title: "Book added successfully",//for success message
+         
         });
         loadTable();
-      });
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: error.message
+        });
+      }
     },
   });
 }
 
+// for posting the record
 function post() {
   const BookName = document.getElementById("BookName").value;
   const AuthorName = document.getElementById("AuthorName").value;
@@ -82,13 +97,21 @@ function post() {
       const objects = JSON.parse(this.responseText);
       Swal.fire(objects["message"]);
       loadTable();
+      
+      // Display success message
+      if (objects["message"] === "Book added successfully") {//for success message
+        Swal.fire({
+          icon: "success",
+          title: "Book added successfully"
+        });
+      }
     }
   };
 
   // Generate new ID
   const table = document.getElementById("table1");
   const maxId = Array.from(table.rows)
-    .slice(1) // Skip header row
+    .slice(1) // To Skip header row
     .reduce((acc, row) => Math.max(acc, row.cells[0].innerText), 0);
   const newId = maxId + 1;
 
@@ -125,8 +148,10 @@ function post() {
         CoverImage: null,
       })
     );
-  }}
- 
+  }
+}
+
+//for editing the records
 function Edit(id) {
   console.log(id);
   const xhttp = new XMLHttpRequest();
@@ -140,35 +165,52 @@ function Edit(id) {
       Swal.fire({
         title: "Edit Book Details",
         html:
+         
           '<input id="id" type="hidden" value="' +
           objects[`${id}`] +
           '">' +
+          '<label >EDIT BOOK NAME</label>' +
           '<input id="BookName" class="swal2-input" placeholder="Enter Book Name" value="' +
           objects["BookName"] +
           '">' +
+          '<label >EDIT AUTHOR NAME</label>' +
           '<input id="AuthorName" class="swal2-input" placeholder="Enter Author Name" value="' +
           objects["AuthorName"] +
           '">' +
+          '<label >EDIT BOOK TYPE</label>' +
           '<input id="BookType" class="swal2-input" placeholder="Enter Book type" value="' +
           objects["BookType"] +
           '">' +
+          '<label >EDIT PUBLISHER NAME</label>' +
           '<input id="Publisher" class="swal2-input" placeholder="Publisher" value="' +
           objects["Publisher"] +
           '">' +
+          '<label >EDIT COST</label><BR>' +
           '<input id="Cost" class="swal2-input" placeholder="Cost" value="' +
           objects["Cost"] +
           '">' +
+          '<label >CHANGE COVER IMAGE</label>' +
           '<input id="CoverImage" class="swal2-input" placeholder="CoverImage" value="' +
           objects["CoverImage"] +
           '">',
         preConfirm: () => {
           userEdit(id);
         },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Success!",
+            text: "The book details have been updated.",
+            icon: "success",
+            timer: 1500
+          });
+        }
       });
     }
   };
 }
 
+//for displaying the updated records
 function userEdit(id) {
   const BookName = document.getElementById("BookName").value;
   const AuthorName = document.getElementById("AuthorName").value;
@@ -194,12 +236,18 @@ function userEdit(id) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       const objects = JSON.parse(this.responseText);
-      Swal.fire(objects["message"]);
+      Swal.fire({
+        icon: "success",
+        title: "Updated Successfully!",
+        text: objects["message"],
+        timer: 1500 
+      });
       loadTable();
     }
   };
 }
 
+//for deleting the record
 function userDelete(id) {
   console.log(id);
 
@@ -210,7 +258,8 @@ function userDelete(id) {
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: 'Yes, delete it!',//for success message
+    timer:5000
   }).then((result) => {
     if (result.value) {
       const xhttp = new XMLHttpRequest();
@@ -230,4 +279,31 @@ function userDelete(id) {
       );
     }
   });
+}
+
+// for login 
+function showLoginBox() {
+  Swal.fire({
+    title: 'Login',
+    html: `
+      <input id="username" class="swal2-input" placeholder="Username">
+      <input id="password" type="password" class="swal2-input" placeholder="Password">
+    `,
+    focusConfirm: false,
+    preConfirm: () => {
+      const username = Swal.getPopup().querySelector('#username').value;
+      const password = Swal.getPopup().querySelector('#password').value;
+      return { username: username, password: password };
+    }
+  }).then((result) => {
+    if (result.value) {
+    
+      Swal.fire({
+        icon: 'success',
+        title: 'Logged in successfully',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+  })
 }

@@ -9,22 +9,34 @@ tr {
     text-align: center;
 }
 
-tr:hover {
-    background-color: rgb(245, 224, 244);
+tr:hover{
+    background-color: rgba(122, 6, 109, 0.912);
 }
 
-tr:nth-child(even) {
-background-color:#efdbea;
-}
 
-tr:nth-child(odd) {
-   background-color:azure ;
-
-}
 table{
     border:solid;
     border-color: rgb(48, 4, 89);
 }
 #b1{
     font-family: cursive;
+}
+body{
+    background-image: url('/asset/images/b.png');
+    position: relative;
+
+}
+tbody{
+    color: rgb(237, 220, 220);
+}
+#b2{
+    color: rgb(234, 236, 224);
+    font-family: cursive;
+    margin-left: 500px;
+   
+}
+#nav1{
+    margin-left: 1200px;
+    position: absolute;
+    margin-top: 70px;
 }
