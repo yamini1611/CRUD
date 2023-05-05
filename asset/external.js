@@ -97,14 +97,6 @@ function post() {
       const objects = JSON.parse(this.responseText);
       Swal.fire(objects["message"]);
       loadTable();
-      
-      // Display success message
-      if (objects["message"] === "Book added successfully") {//for success message
-        Swal.fire({
-          icon: "success",
-          title: "Book added successfully"
-        });
-      }
     }
   };
 
@@ -286,18 +278,23 @@ function showLoginBox() {
   Swal.fire({
     title: 'Login',
     html: `
-      <input id="username" class="swal2-input" placeholder="Username">
-      <input id="password" type="password" class="swal2-input" placeholder="Password">
+      <input id="username" class="swal2-input" placeholder="Username" required>
+      <input id="password" type="password" class="swal2-input" placeholder="Password" required>
     `,
     focusConfirm: false,
     preConfirm: () => {
       const username = Swal.getPopup().querySelector('#username').value;
       const password = Swal.getPopup().querySelector('#password').value;
-      return { username: username, password: password };
+      if (!username || !password) {
+        Swal.showValidationMessage(`Please enter both username and password`);
+      } else if (password.length < 8) {
+        Swal.showValidationMessage(`Password must be at least 8 characters`);
+      } else {
+        return { username: username, password: password };
+      }
     }
   }).then((result) => {
     if (result.value) {
-    
       Swal.fire({
         icon: 'success',
         title: 'Logged in successfully',
