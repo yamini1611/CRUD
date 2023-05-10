@@ -55,6 +55,7 @@ function Create() {
       '<label >UPLOAD COVER IMAGE</label>' +
       '<input id="CoverImage" type="file" class="swal2-input" placeholder="upload Cover Image" required>' +
       '</form>',
+      showCancelButton:true,
     focusConfirm: false,
     preConfirm: async () => {
       const form = document.getElementById('create-form');
