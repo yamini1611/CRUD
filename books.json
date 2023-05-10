@@ -5,7 +5,7 @@
       "AuthorName": "Leo Tolstoy",
       "BookType": "fantasy",
       "Publisher": "Voyna i mir",
-      "Cost": "212",
+      "Cost": "21",
       "CoverImage": "asset/images/book1.jpg",
       "id": "1"
     },
@@ -26,6 +26,15 @@
       "Cost": "112",
       "CoverImage": "asset\\images\\books4.jpg",
       "id": 3
+    },
+    {
+      "BookName": "trujr",
+      "AuthorName": "j",
+      "BookType": "yj",
+      "Publisher": "hj",
+      "Cost": "1",
+      "CoverImage": "asset\\images\\book6.jpg",
+      "id": 4
     }
   ]
 }

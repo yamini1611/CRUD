@@ -22,11 +22,11 @@ function loadTable() {
         trHTML +=
           '<td><button type="button" class="btn btn-outline-secondary" onclick="Edit(' +
           object["id"] +
-          ')">Edit</button>';
+          ')"><span class="bi bi-pencil-square"></span></button>';
         trHTML +=
           '<button type="button" class="btn btn-outline-danger" onclick="userDelete(' +
           object["id"] +
-          ')">Del</button></td>';
+          ')"><span class="bi bi-trash"></span></button></td>';
         trHTML += "</tr>";
       }
       document.getElementById("table1").innerHTML = trHTML;
@@ -176,7 +176,7 @@ function Edit(id) {
           '<label >EDIT PUBLISHER NAME</label>' +
           '<input id="Publisher" class="swal2-input" placeholder="Publisher" value="' +
           objects["Publisher"] +
-          '">' +
+          '"><br>' +
           '<label >EDIT COST</label><BR>' +
           '<input id="Cost" class="swal2-input" placeholder="Cost" value="' +
           objects["Cost"] +
@@ -185,8 +185,10 @@ function Edit(id) {
           '<input id="CoverImage" class="swal2-input" placeholder="CoverImage" value="' +
           objects["CoverImage"] +
           '">',
+          showCancelButton: true,
         preConfirm: () => {
           userEdit(id);
+          
         },
       }).then((result) => {
         if (result.isConfirmed) {
@@ -273,34 +275,4 @@ function userDelete(id) {
   });
 }
 
-// for login 
-function showLoginBox() {
-  Swal.fire({
-    title: 'Login',
-    html: `
-      <input id="username" class="swal2-input" placeholder="Username" required>
-      <input id="password" type="password" class="swal2-input" placeholder="Password" required>
-    `,
-    focusConfirm: false,
-    preConfirm: () => {
-      const username = Swal.getPopup().querySelector('#username').value;
-      const password = Swal.getPopup().querySelector('#password').value;
-      if (!username || !password) {
-        Swal.showValidationMessage(`Please enter both username and password`);
-      } else if (password.length < 8) {
-        Swal.showValidationMessage(`Password must be at least 8 characters`);
-      } else {
-        return { username: username, password: password };
-      }
-    }
-  }).then((result) => {
-    if (result.value) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Logged in successfully',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    }
-  })
-}
+

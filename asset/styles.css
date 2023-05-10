@@ -8,12 +8,18 @@ table {
 /* tr tag styling */
 tr {
     text-align: center;
+    background: #8E0E00;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 /* hover */
 tr:hover{
     background-color: rgba(67, 6, 60, 0.912);
 }
-
+table:hover{
+    opacity: 0.8;
+}
 /* border styling */
 table{
     border:solid;
@@ -25,7 +31,7 @@ table{
 }
 /* background-image */
 body{
-    background-image: url('/asset/images/b.png');
+    background-image: url('/asset/images/bh1.jpg');
     position: relative;
 
 }
@@ -46,3 +52,20 @@ tbody{
     position: absolute;
     margin-top: 70px;
 }
+.error {
+    border-color: red;
+    color: red;
+  }
+  
+  .valid {
+    border-color: green;
+    color: green;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  
